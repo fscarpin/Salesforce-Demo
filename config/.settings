@@ -1,0 +1,16 @@
+{
+    "projectName": "TractionDemo",
+    "username": "fernando@scarpin.com",
+    "id": "f3ed0920-8465-11e6-a944-3965dc59dc17",
+    "namespace": "",
+    "environment": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "workspace": "/Users/fscarpin/Developer/Salesforce",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}

@@ -1,0 +1,399 @@
+{
+    "constructors": [
+        {
+            "annotations": [],
+            "location": {
+                "column": 10,
+                "line": 26
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "IncidentController",
+            "parameters": [],
+            "references": [],
+            "type": null
+        }
+    ],
+    "externalReferences": [],
+    "id": "01p41000006RaUVAA0",
+    "innerClasses": [],
+    "interfaces": [],
+    "key": "01p41000006RaUVAA0",
+    "methods": [
+        {
+            "annotations": [],
+            "location": {
+                "column": 24,
+                "line": 37
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "newIncident",
+            "parameters": [],
+            "references": [],
+            "returnType": "PageReference",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 24,
+                "line": 44
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "showIncident",
+            "parameters": [],
+            "references": [],
+            "returnType": "PageReference",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 15,
+                "line": 65
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "saveAll",
+            "parameters": [],
+            "references": [],
+            "returnType": "void",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 24,
+                "line": 70
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "save",
+            "parameters": [],
+            "references": [],
+            "returnType": "PageReference",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 24,
+                "line": 78
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "create",
+            "parameters": [],
+            "references": [],
+            "returnType": "PageReference",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 24,
+                "line": 86
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "cancel",
+            "parameters": [],
+            "references": [],
+            "returnType": "PageReference",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 15,
+                "line": 95
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "findIncidentLike",
+            "parameters": [],
+            "references": [],
+            "returnType": "void",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 15,
+                "line": 105
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "addCommentary",
+            "parameters": [],
+            "references": [],
+            "returnType": "void",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 29,
+                "line": 119
+            },
+            "modifiers": [
+                "private"
+            ],
+            "name": "loadAllIncidents",
+            "parameters": [],
+            "references": [],
+            "returnType": "LIST",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 29,
+                "line": 126
+            },
+            "modifiers": [
+                "private"
+            ],
+            "name": "loadAllIncidents",
+            "parameters": [
+                {
+                    "name": "incidentLike",
+                    "type": "String"
+                }
+            ],
+            "references": [],
+            "returnType": "LIST",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 23,
+                "line": 138
+            },
+            "modifiers": [
+                "private"
+            ],
+            "name": "loadIncident",
+            "parameters": [
+                {
+                    "name": "incidentNumber",
+                    "type": "String"
+                }
+            ],
+            "references": [],
+            "returnType": "Incident__c",
+            "type": null
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 28,
+                "line": 145
+            },
+            "modifiers": [
+                "private"
+            ],
+            "name": "loadAllComments",
+            "parameters": [],
+            "references": [],
+            "returnType": "LIST",
+            "type": null
+        }
+    ],
+    "name": "IncidentController",
+    "namespace": null,
+    "parentClass": "",
+    "properties": [
+        {
+            "annotations": [],
+            "location": {
+                "column": 28,
+                "line": 8
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "incidents",
+            "references": [],
+            "type": "LIST"
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 22,
+                "line": 11
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "incident",
+            "references": [],
+            "type": "Incident__c"
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 27,
+                "line": 14
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "comments",
+            "references": [],
+            "type": "LIST"
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 21,
+                "line": 17
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "newComment",
+            "references": [],
+            "type": "Comment__c"
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 17,
+                "line": 20
+            },
+            "modifiers": [
+                "public"
+            ],
+            "name": "searchString",
+            "references": [],
+            "type": "String"
+        }
+    ],
+    "tableDeclaration": {
+        "annotations": [],
+        "location": {
+            "column": 14,
+            "line": 1
+        },
+        "modifiers": [
+            "public"
+        ],
+        "name": "IncidentController",
+        "references": [],
+        "type": "IncidentController"
+    },
+    "variables": [
+        {
+            "annotations": [],
+            "location": {
+                "column": 19,
+                "line": 38
+            },
+            "modifiers": [],
+            "name": "pageReference",
+            "references": [],
+            "type": "PageReference"
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 12,
+                "line": 46
+            },
+            "modifiers": [],
+            "name": "incidentNumber",
+            "references": [],
+            "type": "String"
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 19,
+                "line": 58
+            },
+            "modifiers": [],
+            "name": "pageReference",
+            "references": [],
+            "type": "PageReference"
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 19,
+                "line": 72
+            },
+            "modifiers": [],
+            "name": "pageReference",
+            "references": [],
+            "type": "PageReference"
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 19,
+                "line": 80
+            },
+            "modifiers": [],
+            "name": "pageReference",
+            "references": [],
+            "type": "PageReference"
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 19,
+                "line": 87
+            },
+            "modifiers": [],
+            "name": "pageReference",
+            "references": [],
+            "type": "PageReference"
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 12,
+                "line": 96
+            },
+            "modifiers": [],
+            "name": "incidentLike",
+            "references": [],
+            "type": "String"
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 53,
+                "line": 126
+            },
+            "modifiers": [],
+            "name": "incidentLike",
+            "references": [],
+            "type": "String"
+        },
+        {
+            "annotations": [],
+            "location": {
+                "column": 43,
+                "line": 138
+            },
+            "modifiers": [],
+            "name": "incidentNumber",
+            "references": [],
+            "type": "String"
+        }
+    ]
+}

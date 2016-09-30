@@ -1,0 +1,39 @@
+<apex:page controller="CustomContactController" showHeader="true" sidebar="true">
+
+  <apex:image value="{!$Resource.banner}" width="100%"/>
+
+  <apex:form >
+
+    <!-- Used to call our controller method doQuery and rerender the contact list using ajax -->
+    <apex:actionFunction action="{!doQuery}" name="apexDoQuery" reRender="contactList"/>
+
+    <!-- Filter that will set the searchString at the controller, and call our function declared above called apexDoQuery -->
+    <div class="filterDiv">
+      <label> Find by last name: </label>
+      <apex:inputText value="{!searchString}" onkeyup="apexDoQuery()" />
+    </div>
+
+    <apex:pageBlock title="Custom Contacts" id="contactList">
+
+      <apex:pageBlockButtons >
+        <apex:commandButton value="Save" action="{!save}" />
+      </apex:pageBlockButtons>
+
+      <apex:pageBlockTable value="{!contacts}" var="contact">
+
+        <apex:column value="{!contact.Name}"/>
+
+        <apex:column headerValue="Title">
+          <apex:inputField value="{!contact.Title}"/>
+        </apex:column>
+
+        <apex:column headerValue="Email">
+          <apex:inputField value="{!contact.Email}"/>
+        </apex:column>
+
+      </apex:pageBlockTable>
+
+    </apex:pageBlock>
+  </apex:form>
+
+</apex:page>

@@ -1,0 +1,68 @@
+<apex:page controller="IncidentController" showHeader="true" sidebar="true">
+
+  <apex:image value="{!$Resource.banner}" width="100%"/>
+
+  <apex:form >
+
+    <!-- Used to call our controller method doQuery and rerender the contact list using ajax -->
+    <apex:actionFunction action="{!findIncidentLike}" name="searchIncident" reRender="incidentList"/>
+
+    <!-- Filter that will set the searchString at the controller, and call our function declared above called searchIncident -->
+    <div class="filter">
+      <label> Find Incidend: </label>
+      <apex:inputText value="{!searchString}" onkeyup="searchIncident()" />
+    </div>
+
+    <apex:pageBlock title="Incident List" id="incidentList">
+
+      <apex:pageBlockButtons >
+        <!-- New Incident Button -->
+        <apex:commandButton value="New Incident" action="{!newIncident}" />
+
+        <!-- Save button -->
+        <apex:commandButton value="Save" action="{!saveAll}" />
+      </apex:pageBlockButtons>
+
+      <apex:pageBlockTable value="{!incidents}" var="incident">
+
+        <!-- Incident Number -->
+        <apex:column value="{!incident.Name}"/>
+
+        <!-- Status -->
+        <apex:column headerValue="Status">
+          <apex:inputField value="{!incident.Status__c}" />
+        </apex:column>
+
+        <!-- Title -->
+        <apex:column headerValue="Title">
+          <apex:commandLink value="{!incident.Title__c}" action="{!showIncident}">
+            <apex:param name="incidentNumber" value="{!incident.name}"/>
+          </apex:commandLink>
+        </apex:column>
+
+        <!-- Client -->
+        <apex:column value="{!incident.Client__c}"/>
+
+        <!-- Assigned To -->
+        <apex:column headerValue="Assigned To">
+          <apex:inputField value="{!incident.Assigned_To__c}" />
+        </apex:column>
+
+        <!-- Created By -->
+        <apex:column value="{!incident.CreatedById}"/>
+
+        <!-- Created Date -->
+        <apex:column value="{!incident.CreatedDate}"/>
+
+      </apex:pageBlockTable>
+
+    </apex:pageBlock>
+
+  </apex:form>
+
+  <style>
+      .filter{ padding: 10px; }
+      label{ padding: 2px; }
+  </style>
+
+</apex:page>

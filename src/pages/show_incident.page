@@ -1,0 +1,84 @@
+<apex:page controller="IncidentController" showHeader="true" sidebar="true">
+
+  <!-- Show the incident details -->
+  <apex:form>
+    <apex:pageBlock title="{!incident.name}">
+
+      <apex:pageBlockButtons >
+        <!-- Save button -->
+        <apex:commandButton value="Save" action="{!save}" />
+        <!-- Cancel Button -->
+        <apex:commandButton value="Back" action="{!cancel}" immediate="true"/>
+
+      </apex:pageBlockButtons>
+
+      <div class="default_padding">
+        Title <br/>
+        <apex:inputField value="{!incident.title__c}"/>
+      </div>
+
+      <div class="default_padding">
+        Description <br/>
+        <apex:inputField value="{!incident.description__c}"/>
+      </div>
+
+      <div class="default_padding">
+        Status <br/>
+        <apex:inputField value="{!incident.status__c}"/>
+      </div>
+
+      <div class="default_padding">
+        Assigned To <br/>
+        <apex:inputField value="{!incident.assigned_to__c}"/>
+      </div>
+
+      <div class="default_padding">
+        Client <br/>
+        <apex:inputField value="{!incident.client__c}"/>
+      </div>
+
+    </apex:pageBlock>
+
+  </apex:form>
+  <!-- End of: Show the incident details -->
+
+
+  <!-- Create new comment -->
+  <apex:form>
+    <apex:pageBlock title="Add a commentary">
+
+      <apex:pageBlockButtons >
+        <!-- Add commentary button -->
+        <apex:commandButton value="Add commentary" action="{!addCommentary}" rerender="commentsList" />
+      </apex:pageBlockButtons>
+
+      <div class="default_padding">
+        Title: <apex:inputField value="{!newComment.title__c}"/>
+        Comment: <br/> <apex:inputField value="{!newComment.description__c}"/>
+      </div>
+
+    </apex:pageBlock>
+  </apex:form>
+
+  <!-- Comment Section -->
+  <apex:pageBlock title="Comments" id="commentsList">
+    <!-- Loop to show all comments -->
+    <apex:repeat value="{!comments}" var="comment">
+
+      <div class="default_padding">
+        <strong> <apex:outputField value="{!comment.title__c}"/> </strong> <br/>
+        <apex:outputField value="{!comment.description__c}"/> <br/>
+        <small> {!comment.CreatedDate} </small>
+      </div>
+
+    </apex:repeat>
+  </apex:pageBlock>
+  <!-- End of comment Section -->
+
+  <style>
+      .default_padding { padding: 10px; }
+      .padding_bottom { padding-bottom: : 10px; }
+      label{ padding: 2px; }
+  </style>
+
+</apex:page>

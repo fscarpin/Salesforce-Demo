@@ -1,0 +1,47 @@
+<apex:page controller="IncidentController" showHeader="true" sidebar="true">
+
+  <apex:form>
+    <apex:pageBlock title="New Incident">
+
+      <apex:pageBlockButtons >
+        <!-- Save button -->
+        <apex:commandButton value="Save" action="{!create}" />
+        <!-- Cancel Button -->
+        <apex:commandButton value="Back" action="{!cancel}" immediate="true"/>
+
+      </apex:pageBlockButtons>
+
+      <div class="default_padding">
+        Title <br/>
+        <apex:inputField value="{!incident.title__c}"/>
+      </div>
+
+      <div class="default_padding">
+        Description <br/>
+        <apex:inputField value="{!incident.description__c}"/>
+      </div>
+
+      <div class="default_padding">
+        Status <br/>
+        <apex:inputField value="{!incident.status__c}"/>
+      </div>
+
+      <div class="default_padding">
+        Assigned To <br/>
+        <apex:inputField value="{!incident.assigned_to__c}"/>
+      </div>
+
+      <div class="default_padding">
+        Client <br/>
+        <apex:inputField value="{!incident.client__c}"/>
+      </div>
+
+    </apex:pageBlock>
+  </apex:form>
+
+  <style>
+      .default_padding { padding: 10px; }
+      label{ padding: 2px; }
+  </style>
+
+</apex:page>
